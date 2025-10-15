@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#ffffff"
     android:padding="4dp"
     android:layout_width="match_parent"
@@ -107,20 +108,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"/>
 
-    <!-- Khu vực hiển thị kết quả -->
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Result will appear here..."
-        android:textSize="22sp"
-        android:textColor="#000000"
-        android:padding="14dp"
-        android:background="#FFFFFF"
-        android:scrollbars="vertical"
+    <Button
+        android:id="@+id/btnClearLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Log"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FE2020"
         app:layout_constraintTop_toBottomOf="@id/btnStopPoll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Khu vực hiển thị kết quả -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/btnClearLog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        >
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Result will appear here...\n"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:background="#FFFFFF"
+            android:scrollbars="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:overScrollMode="always"
+            android:gravity="start|top"
+            android:lineSpacingExtra="4dp" />
+    </ScrollView>
+<!--    <TextView-->
+<!--        android:id="@+id/tvResult"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="Result will appear here..."-->
+<!--        android:textSize="22sp"-->
+<!--        android:textColor="#000000"-->
+<!--        android:padding="14dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:scrollbars="vertical"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/btnStopPoll"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="16dp"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
