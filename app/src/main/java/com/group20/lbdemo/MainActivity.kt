@@ -166,7 +166,8 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
                         val body = resp.body()
                         appendLog("Health poll OK | Server: ${body?.server}")
                     } else {
-                        appendLog("Health poll FAIL (${resp.code()})")
+                        val body = resp.body()
+                        appendLog("Health poll FAIL (${resp.code()}) | Server: ${body?.server}")
                     }
                 } catch (e: Exception) {
                     appendLog("Health poll error: ${e.localizedMessage}")
